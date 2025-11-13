@@ -1,7 +1,10 @@
 package week_2;
 
 public class question_6 {
-    public static String[] convertHrMinSec(int sec){
+    public static double[] convertHrMinSec(int sec){
+        if (sec < 0) {
+            return new double[]{-1};
+        }
         int hr = sec / 3600;
 
         sec %= 3600;
@@ -10,6 +13,6 @@ public class question_6 {
         sec %= 60;
         int secondsRemaining = sec;
 
-        return new String[]{"Hr = " + hr, " / Min = " + min, " / Sec = " + secondsRemaining};
+        return new double[]{hr,min,secondsRemaining};
     }
 }
